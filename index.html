@@ -1,14 +1,30 @@
 <html>
     <head>
         <title>Création d'une to-do JavaScript</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="index.css">
     
     </head>
     <body>
+
         <div class="container">
+            <div class="title">To-do List App</div>
             <div class="containerField">
-                <input type="text" placeholder="Add a to-do...">
-                <button class="btn">+</button>
+                <form id="form">
+                        <div style="justify-content:center; display:flex">
+                            <div id="text">
+                                <label for="john doe">Taks :</label>
+                                <input type="text" name="john doe" placeholder="Add a to-do...">
+                            </div>
+                            <div id="time">
+                                <label for="ordy">Choose a time :</label>
+                                <input type="datetime-local" id="ordy" name="ordy"  required>
+                            </div>
+                        </div>
+                        <div style="justify-content:center; display:flex" id="valid">
+                            <button class="btn" type="submit">+</button>
+                        </div>
+                </form>
+
             </div>
             <div id="stored">
             <ul class="ul" id="10e">
@@ -16,12 +32,16 @@
             </ul>
             </div>
             <div class="footer">
-                You have <span id="to-do">0</span> to-do 
-                <button >Clear All</button>
+                You have <span id="to-do">0</span> Pending tasks 
+                <button type="button">Clear All</button>
             </div>
-        </div>
-        <script type="text/javascript" src="index.js"> 
+            <div id="essai-date">
 
-        </script>
+            </div>
+            <button  style="display: block;" id="enable">Activer les notifications</button>
+
+
+        </div>
+        <script type="text/javascript" src="index.js" async> </script>
     </body>
 </html>

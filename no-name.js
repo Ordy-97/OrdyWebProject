@@ -30,15 +30,6 @@ form.addEventListener('submit'  , function(e){ //on écoute l'evènement 'click'
 
   e.stopPropagation()
   e.preventDefault()
-  /*for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement; //on recupère le parent de l'element "close" qui est <li></li>
-      liste.removeChild(div); // masque la valeur de <li></li> grace à l'attribut "style.display" // on supprime complètement avec removeChild()
-     // console.log(listeItems)
-        document.getElementById("to-do").innerHTML = listeItems.length
-        //console.log(listeItems)
-    } 
-  }*/
 })
 
 
@@ -67,16 +58,6 @@ const closed = document.querySelector(".footer button")
    addToLocalStorage(todos)
    document.getElementById("to-do").innerHTML = 0
  })
-/*function(){
-  var i = 0;
-  while(i < listeItems.length){
-    liste.removeChild(listeItems[i])
-  }(i++)
-  document.getElementById("to-do").innerHTML = listeItems.length
-  //console.log(listeItems)
-
-}*/
-
 
 
 //--------------------***************************----------------------------------*******/////
@@ -122,7 +103,6 @@ function getFromLocalStorage(){
   }
 }
 
-
 function notification(){
   todos.forEach(function(item){
     let now = new Date()
@@ -140,14 +120,14 @@ function notification(){
        Notification.requestPermission();
       else {
        var notification = new Notification(task, {
-        icon: 'https://cdn-icons-png.flaticon.com/512/1040/1040216.png',
-        body: 'Hey there! You\'ve been notified! It\'s time for your taks :-)',
+        icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+        body: 'Hey there! You\'ve been notified!',
         vibrate: [200, 100, 200, 100, 200, 100, 200],
         tag: 'vibration-sample'
        });
-      //  notification.onclick = function() {
-      //   window.open('http://stackoverflow.com/a/13328397/1269037');
-      //  };
+       notification.onclick = function() {
+        window.open('http://stackoverflow.com/a/13328397/1269037');
+       };
        localStorage.setItem('boolean', 'true')
        isNotify = localStorage.getItem('boolean')
       }
